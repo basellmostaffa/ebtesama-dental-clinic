@@ -1,0 +1,3 @@
+import { services } from '../data/services'
+
+export default function Services() { return <section className="section" id="services"><div className="container"><div className="section-heading"><div><span className="kicker">خدماتنا</span><h2>كل ما تحتاجه<br/><span>ابتسامتك في مكان واحد</span></h2></div><p>نقدم لك باقة متكاملة من خدمات الأسنان باستخدام أحدث التقنيات وبأيدي فريق طبي متخصص.</p></div><div className="service-grid">{services.map(({icon: Icon, title, text}) => <article className="service-card" key={title}><div className="icon-box"><Icon size={24}/></div><h3>{title}</h3><p>{text}</p><a href="#booking">اعرف المزيد <span>←</span></a></article>)}</div></div></section> }

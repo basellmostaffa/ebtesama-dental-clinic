@@ -1,0 +1,4 @@
+import { useState } from 'react'
+import { Plus, Minus } from 'lucide-react'
+import { faq } from '../data/faq'
+export default function FAQ() { const [active, setActive] = useState(0); return <section className="section" id="faq"><div className="container faq-layout"><div className="faq-intro"><span className="kicker">الأسئلة الشائعة</span><h2>لديك سؤال؟<br/><span>نحن هنا لمساعدتك</span></h2><p>لم تجد إجابة سؤالك؟ تواصل معنا وسيرد عليك فريقنا بكل ترحاب.</p><a href="#booking" className="text-link">تواصل مع فريقنا ←</a></div><div className="accordion">{faq.map((item, i) => <div className={`faq-item ${active === i ? 'active' : ''}`} key={item.q}><button onClick={() => setActive(active === i ? -1 : i)} aria-expanded={active === i}><span>{item.q}</span>{active === i ? <Minus size={19}/> : <Plus size={19}/>}</button>{active === i && <p>{item.a}</p>}</div>)}</div></div></section> }
